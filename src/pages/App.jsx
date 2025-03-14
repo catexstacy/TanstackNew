@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Main = () => {
+const App = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
     const handleSearch = () => {
         if (searchTerm.trim() !== "") {
-            navigate(`/user/${searchTerm}`);
+            navigate(`/${searchTerm}`);
         }
     };
 
@@ -28,7 +28,7 @@ const Main = () => {
                         className="px-[2rem] py-[1rem] outline-0 bg-[#EAEDF7] rounded-lg flex-grow"
                         placeholder="Enter a valid username"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => setSearchTerm(e.target.value)} // updates the searchTerm state as the user types
                     />
                     <button 
                         type="button"
@@ -45,4 +45,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default App;
